@@ -1,0 +1,124 @@
+#cardpick {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+#cardpick .deck-cards {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    padding: 0 10%;
+    overflow: hidden;
+}
+#cardpick .deck-cards .cards-box {
+    width: 100%;
+    display: flex;
+}
+#cardpick .deck-card {
+    position: relative;
+}
+#cardpick .deck-card .card-wrapper {
+    width: 100px;
+    height: 190px;
+    border: 3px solid grey;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#cardpick .deck-card .card-wrapper img {
+    width: 100%;
+}
+
+
+#cardpick .deck-card:hover .card-wrapper {
+    box-shadow: 0 0 20px 3px blue;
+    z-index: 2;
+}
+#cardpick .deck-card.selected {
+    z-index: 1;
+}
+#cardpick .deck-card.selected .card-wrapper {
+    box-shadow: 0 0 6px 3px white;
+}
+#cardpick .deck-card.selected .card-wrapper .front {
+    display: block;
+}
+#cardpick .deck-card .card-wrapper .front {
+    display: none;
+}
+#cardpick .deck-card.selected .card-wrapper .back {
+    display: none;
+}
+#cardpick .deck-card .card-wrapper .back {
+    display: block;
+}
+
+
+#cardpick .quotes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#cardpick .quotes .quote {
+    width: 40%;
+    padding: 1%;
+}
+#cardpick .quotes .quote p {
+    width: 100%;
+    text-align: center;
+}
+#cardpick button {
+    width: 10%;
+    background: black;
+    border: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 38px;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #00f,
+        0 0 42px #00f,
+        0 0 82px #00f,
+        0 0 92px #00f,
+        0 0 102px #00f,
+        0 0 151px #00f;
+}
+#cardpick button:hover {
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #fff,
+        0 0 82px #fff,
+        0 0 92px #fff,
+        0 0 102px #fff,
+        0 0 151px #fff;
+}
+
+#cardpick .continue {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+#cardpick .continue button {
+    background: rgba(0,0,0,0);
+    z-index: 10;
+    width: 30%;
+    height: 30%;
+}
+
+
+
+
+
+
+
+
+
+
+
