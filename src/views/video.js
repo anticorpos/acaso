@@ -20,8 +20,6 @@ const VideoView = {
     });
   },
   mounted() {
-    this.boxWidth = this.$refs.videoBox.clientWidth
-    this.boxHeight = this.$refs.videoBox.clientHeight
 
     this.sourceVideos = [
       "acaso_inicio.m4v",
@@ -31,6 +29,8 @@ const VideoView = {
     console.log(this.sourceVideos)
     const video = document.getElementById("player");
     const play = ()=>{
+      this.boxWidth = this.$refs.videoBox.clientWidth
+      this.boxHeight = this.$refs.videoBox.clientHeight
       if (this.counter == this.sourceVideos.length) {
         this.$router.push({ path: '/' })
       } else {
@@ -39,13 +39,13 @@ const VideoView = {
       }
     };
     // window.onload = ()=>{
-      video.addEventListener("ended", play, false);
-      play();
+    video.addEventListener("ended", play, false);
+    play();
     // }
   },
   methods: {
     videoLink(video) {
-      return "/src/videos/" + video
+      return "src/videos/" + video
     }
   },
   template: `

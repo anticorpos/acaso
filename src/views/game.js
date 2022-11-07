@@ -16,7 +16,7 @@ const JogoView = {
       videos: [],
       isPaused: true,
       isPlay: false,
-      maxVideos: 2,
+      maxVideos: 5,
     }
   },
   computed: {
@@ -89,8 +89,6 @@ const JogoView = {
       videoFilename += Number(this.hand.encanto.id) % limit;
       videoFilename += '.m4v';
 
-      console.log(videoFilename)
-      console.log(videosData)
       const videoId = videosData.find((e) => e.name == videoFilename).id
       console.log(videoId, videoFilename)
       return videoId
