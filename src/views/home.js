@@ -1,15 +1,13 @@
 const HomeView = {
+  components: [
+    NavComponent,
+  ],
   template: `
-  <div class="home">
-    <div class="container">
-      <div class="nav">
-        <nav>
-          <router-link to="/jogo">Começar</router-link>
-          <router-link to="/creditos">Créditos</router-link>
-        </nav>
-      </div>
+  <div id="home" class="nav-view">
+    <NavComponent :home="true" />
+    <div class="view">
       <div class="logo">
-        <img src="src/imgs/logo-acaso.jpeg" />
+        <img src="src/imgs/logo-acaso.png" />
       </div>
     </div>
   </div>

@@ -1,74 +1,158 @@
-#cardpick {
+/* #game {
     height: 100vh;
     display: flex;
     flex-direction: column;
+} */
+#game .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
+#game .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100%;
+}
 
-#cardpick .deck-cards {
-    width: 100vw;
+#game .logo {
+    height: 90vh;
+}
+#game .logo img {
+    width: 100%;
+    height: 100%;
+}
+
+#game .deck-cards {
+    width: 50%;
     height: 100%;
     display: flex;
-    padding: 0 10%;
     overflow: hidden;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
-#cardpick .deck-cards .cards-box {
+#game .deck-cards .cards-box {
     width: 100%;
     display: flex;
+    padding: 10px;
 }
-#cardpick .deck-card {
+#game .deck-card {
     position: relative;
 }
-#cardpick .deck-card .card-wrapper {
+#game .card-wrapper {
     width: 100px;
     height: 190px;
     border: 3px solid grey;
     border-radius: 5px;
     overflow: hidden;
 }
-#cardpick .deck-card .card-wrapper img {
+#game .card-wrapper img {
     width: 100%;
 }
 
-
-#cardpick .deck-card:hover .card-wrapper {
+#game .deck-card:hover {
+    transform: rotate(-10deg) translateY(-15px);
+}
+#game .deck-card:hover .card-wrapper {
     box-shadow: 0 0 20px 3px blue;
     z-index: 2;
 }
-#cardpick .deck-card.selected {
+#game .deck-card.selected {
     z-index: 1;
 }
-#cardpick .deck-card.selected .card-wrapper {
+#game .deck-card.selected .card-wrapper {
     box-shadow: 0 0 6px 3px white;
 }
-#cardpick .deck-card.selected .card-wrapper .front {
+#game .deck-card.selected .card-wrapper .front {
     display: block;
 }
-#cardpick .deck-card .card-wrapper .front {
+#game .deck-card .card-wrapper .front {
     display: none;
 }
-#cardpick .deck-card.selected .card-wrapper .back {
+#game .deck-card.selected .card-wrapper .back {
     display: none;
 }
-#cardpick .deck-card .card-wrapper .back {
+#game .deck-card .card-wrapper .back {
     display: block;
 }
 
+#game .control {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#game .control .cards-hand {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+}
+#game .control .preview .thumbs img {
+    width: 100%;
+}
+#game .control .cards-hand .card-wrapper {
+    width: 125px;
+    height: 238px;
+    margin: 16px;
+}
+#game .control .preview {
+    width: 90%;
+}
 
-#cardpick .quotes {
+#game .control button.play {
+    border: 0;
+    background: transparent;
+    box-sizing: border-box;
+    width: 0;
+    height: 74px;
+
+    border-color: transparent transparent transparent #DDDDDD;
+    transition: 100ms all ease;
+    cursor: pointer;
+
+    border-style: solid;
+    border-width: 37px 0 37px 60px;
+}
+#game .control button.play.paused {
+    border-style: double;
+    border-width: 0px 0 0px 60px;
+}
+#game .control button.play:hover {
+    border-color: transparent transparent transparent #999999;
+}
+
+#game .timeline {
+    padding: 60px;
+}
+#game .timeline .line {
+    width: 100%;
+    height: 20px;
+    border: 2px solid white;
+}
+#game .timeline .line .progress {
+    width: 40%;
+    height: 16px;
+    background-color: red;
+}
+
+#game .quotes {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#cardpick .quotes .quote {
+#game .quotes .quote {
     width: 40%;
     padding: 1%;
 }
-#cardpick .quotes .quote p {
+#game .quotes .quote p {
     width: 100%;
     text-align: center;
 }
-#cardpick button {
+#game button {
     width: 10%;
     background: black;
     border: none;
@@ -85,7 +169,7 @@
         0 0 102px #00f,
         0 0 151px #00f;
 }
-#cardpick button:hover {
+#game button:hover {
     text-shadow:
         0 0 7px #fff,
         0 0 10px #fff,
@@ -97,7 +181,7 @@
         0 0 151px #fff;
 }
 
-#cardpick .continue {
+#game .continue {
     display: flex;
     width: 100%;
     height: 100%;
@@ -105,7 +189,7 @@
     align-items: center;
     justify-content: center;
 }
-#cardpick .continue button {
+#game .continue button {
     background: rgba(0,0,0,0);
     z-index: 10;
     width: 30%;

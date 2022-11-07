@@ -2,53 +2,72 @@ const VideoView = {
   data() {
     return {
       id: this.$route.params.id,
+      counter: 0,
+      videoPlaying: "",
+      videos: [],
       boxWidth: 0,
       boxHeight: 0,
       isLoaded: false,
       isPlaying: false,
     }
   },
-  computed: {
-    videoLink() {
-      return "./src/videos/output" + this.id + ".mp4"
-    }
-  },
   created() {
+    this.videos = this.id.split("-").map((id) => videosData.find((v) => v.id == id))
+
     window.addEventListener("resize", () => {
       this.boxWidth = this.$refs.videoBox.clientWidth
       this.boxHeight = this.$refs.videoBox.clientHeight
     });
   },
   mounted() {
-    this.$refs.video.addEventListener('loadeddata', () => {
-      if (this.$refs.video.readyState === 4) {
-        this.isLoaded = true
+    this.boxWidth = this.$refs.videoBox.clientWidth
+    this.boxHeight = this.$refs.videoBox.clientHeight
+
+    this.sourceVideos = [
+      "acaso_inicio.m4v",
+      ...this.videos.map((v) => v.name),
+      "acaso_fim.m4v"
+    ]
+    console.log(this.sourceVideos)
+    const video = document.getElementById("player");
+    const play = ()=>{
+      if (this.counter == this.sourceVideos.length) {
+        this.$router.push({ path: '/' })
+      } else {
+        video.src = this.videoLink(this.sourceVideos[this.counter]);
+        this.counter++;
       }
-    });
-    this.$refs.video.addEventListener('ended', () => {
-      this.$router.push({ path: '/jogo' })
-    });
+    };
+    // window.onload = ()=>{
+      video.addEventListener("ended", play, false);
+      play();
+    // }
   },
   methods: {
-    playVideo() {
-      this.isPlaying = true
-      setTimeout(() => {
-        this.boxWidth = this.$refs.videoBox.clientWidth
-        this.boxHeight = this.$refs.videoBox.clientHeight
-        this.$refs.video.play()
-      }, 1000)
+    videoLink(video) {
+      return "/src/videos/" + video
     }
   },
   template: `
-    <div class="video">
-      <div class="loader" v-if="!isPlaying">
-        <p v-if="!isLoaded">Carregando...</p>
-        <p v-if="isLoaded">Carregado</p>
-        <button v-if="isLoaded" @click="playVideo()">Seguir</button>
-      </div>
-      <div class="video-container" ref="videoBox" v-show="isPlaying">
-        <video :width="boxWidth" :height="boxHeight" autoplay ref="video">
-          <source :src="videoLink" type="video/mp4" />
+    <div id="video">
+      <div id="video-container" ref="videoBox">
+
+        <video
+          id="player"
+          class="video-js"
+          controls
+          autoplay
+          preload="auto"
+          :width="boxWidth"
+          :height="boxHeight"
+        >
+          <p class="vjs-no-js">
+            To view this video please enable JavaScript, and consider upgrading to a
+            web browser that
+            <a href="https://videojs.com/html5-video-support/" target="_blank"
+              >supports HTML5 video</a
+            >
+          </p>
         </video>
       </div>
     </div>
