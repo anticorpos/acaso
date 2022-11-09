@@ -38,10 +38,8 @@ const VideoView = {
         this.counter++;
       }
     };
-    // window.onload = ()=>{
     video.addEventListener("ended", play, false);
     play();
-    // }
   },
   methods: {
     videoLink(video) {
@@ -69,6 +67,7 @@ const VideoView = {
             >
           </p>
         </video>
+        <video id="cache" width="0" height="0"></div>
       </div>
     </div>
   `

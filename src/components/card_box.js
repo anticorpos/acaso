@@ -27,21 +27,10 @@ const CardBox = {
     getXPosition(index) {
       return -index * 100 + index * (this.boxWidth/this.cards.length) - (100/this.cards.length)*index
     },
-    // getYPosition(index) {
-    //   return -0.4*Math.pow((index-(this.cards.length/2)), 2)
-    // },
-    // getRotationDeg(index) {
-    //   return 1.2*(index-(this.cards.length/2))
-    // },
     isSelected(card) {
       return this.selecteds.some(id => id === card.id)
     },
     selectCard(card) {
-    // if (this.isSelected(card)) {
-    //   this.selecteds = this.selecteds.filter((value) => value !== card.id)
-    // } else if (this.selecteds.length < 1) {
-    //   this.selecteds.push(card.id)
-    // }
       if (this.blocked) return
       this.selecteds = [card.id]
       this.$emit('pick', card)

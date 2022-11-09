@@ -80,20 +80,19 @@ body {
   font-weight: normal;
   color: white;
 }
-
 #app p {
-  width: 90%;
+  font-size: 18px;
 }
-
-#app #home .logo {
-  height: 90vh;
+#app h1 {
+  color: #E74444;
 }
-#app #home .logo img {
-  width: 100%;
-  height: 100%;
+#app h2 {
+  font-weight: bolder;
+  font-size: 32px;
 }
-
-
+#app h3 {
+  font-weight: bold;
+}
 
 
 #app .nav-view {
@@ -102,27 +101,33 @@ body {
   width: 100vw;
 }
 #app .view {
-  width: 85vw;
+  width: 80vw;
   height: 100vh;
+  margin-left: 5vw;
+}
+#app .text {
+  margin: 3% 10% 0 0;
 }
 
 #app #nav {
   width: 15vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  text-align: end;
 }
 #app #nav img {
   width: 100%;
+  margin: 10% 0;
+}
+#app #nav img.logo-ac {
+  width: 70%;
 }
 #app #nav nav {
   display: flex;
   justify-content: end;
   flex-direction: column;
-  height: 80%;
-  margin: 10% 0;
+  margin: 25% 0;
 }
 #app #nav nav a {
   color: white;
@@ -188,4 +193,27 @@ body {
 #app #video #video-container {
   width: 100%;
   height: 100%;
+}
+
+
+#app #home .view {
+  display: flex;
+  justify-content: center;
+}
+
+#app #home .logo {
+  height: 90vh;
+}
+#app #home .logo img {
+  width: auto;
+  height: 100%;
+}
+
+#creditos .layout {
+  columns: 2;
+  line-height: 1.2;
+}
+
+#grupo a {
+  color: #38A4EA;
 }

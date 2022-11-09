@@ -36,20 +36,21 @@
 #game .deck-cards .cards-box {
     width: 100%;
     display: flex;
-    padding: 10px;
+    margin-left: 5%;
 }
 #game .deck-card {
     position: relative;
 }
 #game .card-wrapper {
-    width: 100px;
-    height: 190px;
+    width: 80px;
+    height: 150px;
     border: 3px solid grey;
     border-radius: 5px;
     overflow: hidden;
 }
 #game .card-wrapper img {
     width: 100%;
+    height: 100%;
 }
 
 #game .deck-card:hover {
@@ -95,15 +96,16 @@
     width: 100%;
 }
 #game .control .cards-hand .card-wrapper {
-    width: 125px;
-    height: 238px;
+    width: 25%;
+    height: auto;
     margin: 16px;
 }
 #game .control .preview {
     width: 90%;
 }
 
-#game .control button.play {
+#game button.play {
+    margin-left: 5%;
     border: 0;
     background: transparent;
     box-sizing: border-box;
@@ -117,16 +119,18 @@
     border-style: solid;
     border-width: 37px 0 37px 60px;
 }
-#game .control button.play.paused {
+#game button.play.paused {
     border-style: double;
     border-width: 0px 0 0px 60px;
 }
-#game .control button.play:hover {
+#game button.play:hover {
     border-color: transparent transparent transparent #999999;
 }
 
 #game .timeline {
-    padding: 60px;
+    padding: 0 5% 5% 0;
+    display: flex;
+    align-items: center;
 }
 #game .timeline .line {
     width: 100%;

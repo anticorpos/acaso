@@ -17,6 +17,7 @@ const JogoView = {
       isPaused: true,
       isPlay: false,
       maxVideos: 5,
+      thumbs: '',
     }
   },
   computed: {
@@ -87,6 +88,8 @@ const JogoView = {
       }
 
       videoFilename += Number(this.hand.encanto.id) % limit;
+      this.thumbs = videoFilename + '.gif';
+      console.log(this.thumbs)
       videoFilename += '.m4v';
 
       const videoId = videosData.find((e) => e.name == videoFilename).id
@@ -152,9 +155,15 @@ const JogoView = {
           </div>
           
           <div class="preview">
-            <button class="play" :class="{ paused: isPaused && !isPlay }" @click="nextVideo()"></button>
             <div class="thumbs">
-              <img src="src/imgs/previews/preview.png" />
+              <div v-if="thumbs">
+                <img :src="'src/videos/thumbs/'+thumbs" />
+              </div>
+              <div v-else>
+                <p>Escolha três cartas.</p>
+                <p>Aperte play para preencher a timeline.</p>
+                <p>Complete a timeline para assistir ao vídeo.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -171,6 +180,7 @@ const JogoView = {
           >
           </div>
         </div>
+        <button class="play" :class="{ paused: isPaused && !isPlay }" @click="nextVideo()"></button>
       </div>
 
     </div>
