@@ -16,7 +16,7 @@ const CreditoView = {
         <div class="layout">
           <div class="group">
             <h3>Dança</h3>
-            <p>Bárbara Carbogim, Diego Bernardo, Jeff Fernandes, Malu Mesquita, Marina João, Marina Brandt.</p>
+            <p>Bárbara Carbogim, Diego Bernardo, Jeff Fernandes, Malu Mesquita, Marina João, Marina Freire.</p>
           </div>
           <div class="group">
             <h3>Imagens</h3>
@@ -33,6 +33,7 @@ const CreditoView = {
           <div class="group">
             <h3>Edição</h3>
             <p>João Bertolai</p>
+            <p>Marina Freire</p>
           </div>
           <div class="group">
             <h3>Criação do Tarot</h3>

@@ -128,6 +128,7 @@ body {
   justify-content: end;
   flex-direction: column;
   margin: 25% 0;
+  text-align: right;
 }
 #app #nav nav a {
   color: white;
@@ -216,4 +217,18 @@ body {
 
 #grupo a {
   color: #38A4EA;
+}
+
+
+#app #projeto a {
+  color: white;
+  text-decoration: none;
+  padding: 2%;
+  font-size: 26px;
+  font-weight: bolder;
+  padding-bottom: 0.5%;
+  border-bottom: 1px solid black;
+}
+#app #projeto a:hover {
+  border-bottom: 1px solid red;
 }

@@ -25,7 +25,7 @@ const CardBox = {
       this.quoteIndex = (this.quoteIndex + value) % this.quotes.length
     },
     getXPosition(index) {
-      return -index * 100 + index * (this.boxWidth/this.cards.length) - (100/this.cards.length)*index
+      return -index * 80 + index * (this.boxWidth/this.cards.length) - (80/this.cards.length)*index
     },
     isSelected(card) {
       return this.selecteds.some(id => id === card.id)
@@ -45,8 +45,6 @@ const CardBox = {
       :name="card.name"
       :style="{
         left: getXPosition(index) + 'px',
-        // transform: 'rotate(' + getRotationDeg(index) + 'deg)',
-        // bottom: getYPosition(index) + 'px',
       }"
       @click="selectCard(card)"
       :class="{ selected: isSelected(card)}"

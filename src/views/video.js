@@ -22,6 +22,7 @@ const VideoView = {
   mounted() {
 
     this.sourceVideos = [
+      "acaso_vinheta.m4v",
       "acaso_inicio.m4v",
       ...this.videos.map((v) => v.name),
       "acaso_fim.m4v"
