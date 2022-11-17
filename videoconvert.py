@@ -9,10 +9,11 @@ args = parser.parse_args()
 filenames = [f for f in os.listdir(args.input) if isfile(join(args.input, f))]
 
 for filename in filenames:
-    if filename.split('.')[-1] != 'wmv':
-        continue
+    # if filename.split('.')[-1] != 'wmv':
+    #     continue
     name = filename.split('.')[0]
-    cmd = f'ffmpeg -i "{args.input}{filename}" -vcodec libx264 output/{name}.m4v'
-    # os.system(f'echo " >>> *** {cmd} ***"')
+    output_filename = f"{args.input}converted/{name}.m4v"
+    cmd = f'ffmpeg -i "{args.input}{filename}" -vcodec libx264 "{output_filename}"'
+    os.system(f'echo " >>> *** {cmd} ***"')
     os.system(cmd)
 

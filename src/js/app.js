@@ -22,8 +22,12 @@ function startApp() {
     { path: "/", component: HomeView },
     { path: "/jogo", component: JogoView },
     { path: "/creditos", component: CreditoView },
-    { path: "/projeto", component: ProjetoView },
     { path: "/grupo", component: GrupoView },
+    {
+      path: "/projeto/:id?",
+      name: "projeto",
+      component: ProjetoView,
+    },
     {
       path: "/video/:id",
       name: "video",

@@ -58,33 +58,56 @@ const JogoView = {
       let videoFilename = "";
       if (corpo.cabeca.includes(this.hand.corpo.name)) {
         videoFilename += 'cabeca';
-        limit = 5;
+        limit = 11;
       }
       if (corpo.torco.includes(this.hand.corpo.name)) {
         videoFilename += 'torco';
-        limit = 4;
+        limit = 17;
       }
       if (corpo.bacia.includes(this.hand.corpo.name)) {
         videoFilename += 'bacia';
-        limit = 9;
+        limit = 12;
       }
 
       if (movimento.nofilter.includes(this.hand.movimento.name)) {
         videoFilename += '_';
       }
       if (movimento.invertido.includes(this.hand.movimento.name)) {
-        videoFilename += '_invertido_';
+        if (videoFilename == 'bacia') {
+          limit = 11
+        }
+        if (videoFilename == 'cabeca') {
+          videoFilename += '_invertida_';
+        } else {
+          videoFilename += '_invertido_';
+        }
       }
       if (movimento.peb.includes(this.hand.movimento.name)) {
-        if (videoFilename == 'bacia') limit = 5
-        videoFilename += '_peb_';
+        if (videoFilename == 'bacia') {
+          limit = 11
+          videoFilename += '_peb_alt_';
+        } else if (videoFilename == 'cabeca') {
+          videoFilename += '_peb_alt_';
+        } else {
+          videoFilename += '_peb_';
+        }
       }
       if (movimento.sobreposicao.includes(this.hand.movimento.name)) {
-        if (videoFilename == 'bacia') limit = 5
-        videoFilename += '_sobreposicao_';
+        if (videoFilename == 'bacia') {
+          limit = 11
+          videoFilename += '_sobreposicao_alt_';
+        } else if (videoFilename == 'cabeca') {
+          videoFilename += '_sobreposicao_alt_';
+        } else {
+          videoFilename += '_sobreposicao_';
+        }
       }
       if (movimento.negativo.includes(this.hand.movimento.name)) {
-        videoFilename += '_negativo_';
+        if (videoFilename == 'cabeca') {
+          videoFilename += '_negativa_';
+        } else {
+          videoFilename += '_negativo_';
+        }
       }
 
       videoFilename += Number(this.hand.encanto.id) % limit;

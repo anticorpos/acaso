@@ -2,6 +2,20 @@ const ProjetoView = {
   components: [
     NavComponent,
   ],
+  data() {
+    return {
+      id: this.$route.params.id,
+      shareCode: '',
+    }
+  },
+  mounted() {
+    this.shareCode = window.location.href
+  },
+  methods: {
+    copyToClipboard() {
+      navigator.clipboard && navigator.clipboard.writeText(this.shareCode)
+    },
+  },
   template: `
   <div id="projeto" class="nav-view">
 
@@ -17,7 +31,13 @@ const ProjetoView = {
         </p>
       </div>
 
+      <div class="share" v-if="id">
+        <span>Compartilhe com o link: </span>
+        <input type="text" :value="shareCode" readonly @click="copyToClipboard">
+      </div>
+
       <router-link to="/jogo">começar</router-link>
+
     </div>
   </div>
   `,

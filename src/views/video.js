@@ -33,7 +33,7 @@ const VideoView = {
       this.boxWidth = this.$refs.videoBox.clientWidth
       this.boxHeight = this.$refs.videoBox.clientHeight
       if (this.counter == this.sourceVideos.length) {
-        this.$router.push({ path: '/' })
+        this.$router.push({ path: '/projeto/' + this.id })
       } else {
         video.src = this.videoLink(this.sourceVideos[this.counter]);
         this.counter++;
@@ -68,7 +68,7 @@ const VideoView = {
             >
           </p>
         </video>
-        <video id="cache" width="0" height="0"></div>
+        <video id="cache" width="0" height="0"></video>
       </div>
     </div>
   `

@@ -229,6 +229,6 @@ body {
   padding-bottom: 0.5%;
   border-bottom: 1px solid black;
 }
-#app #projeto a:hover {
+#app #projeto .view a:hover {
   border-bottom: 1px solid red;
 }
