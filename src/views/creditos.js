@@ -23,8 +23,8 @@ const CreditoView = {
             <p>Éden Peretta, Marina João, Gustavo Maia.</p>
           </div>
           <div class="group">
-            <h3>Trilha</h3>
-            <p>Jeff Fernandes</p>
+            <h3>Músicas</h3>
+            <p>Ayrala</p>
           </div>
           <div class="group">
             <h3>Desenvolvimento do Site</h3>
@@ -32,6 +32,7 @@ const CreditoView = {
           </div>
           <div class="group">
             <h3>Edição</h3>
+            <p>Éden Peretta</p>
             <p>João Bertolai</p>
             <p>Marina Freire</p>
           </div>

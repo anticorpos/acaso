@@ -24,12 +24,12 @@ function startApp() {
     { path: "/creditos", component: CreditoView },
     { path: "/grupo", component: GrupoView },
     {
-      path: "/projeto/:id?",
+      path: "/projeto/:id?/:share?",
       name: "projeto",
       component: ProjetoView,
     },
     {
-      path: "/video/:id",
+      path: "/video/:id/:share?",
       name: "video",
       component: VideoView,
     },

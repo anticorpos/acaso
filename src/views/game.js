@@ -140,6 +140,8 @@ const JogoView = {
       }
     },
     goToVideo() {
+      const musicId = Math.floor(Math.random() * 9)
+      this.videos.push(musicId)
       const finalIds = this.videos.join('-')
       console.log(finalIds)
       this.$router.push({ path: '/video/'+finalIds })
@@ -183,7 +185,7 @@ const JogoView = {
                 <img :src="'src/videos/thumbs/'+thumbs" />
               </div>
               <div v-else>
-                <p>Escolha três cartas.</p>
+                <p>Escolha uma carta de cada fileira.</p>
                 <p>Aperte play para preencher a timeline.</p>
                 <p>Complete a timeline para assistir ao vídeo.</p>
               </div>

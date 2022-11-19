@@ -9,10 +9,16 @@ const VideoView = {
       boxHeight: 0,
       isLoaded: false,
       isPlaying: false,
+      isShared: this.$route.params.share,
+      musicId: 0,
+      audio: null,
     }
   },
   created() {
-    this.videos = this.id.split("-").map((id) => videosData.find((v) => v.id == id))
+    const videosIds = this.id.split("-")
+    this.musicId = videosIds.pop()
+    this.videos = videosIds.map((id) => videosData.find((v) => v.id == id))
+    console.log(this.musicId)
 
     window.addEventListener("resize", () => {
       this.boxWidth = this.$refs.videoBox.clientWidth
@@ -23,17 +29,44 @@ const VideoView = {
 
     this.sourceVideos = [
       "acaso_vinheta.m4v",
-      "acaso_inicio.m4v",
       ...this.videos.map((v) => v.name),
       "acaso_fim.m4v"
     ]
     console.log(this.sourceVideos)
     const video = document.getElementById("player");
-    const play = ()=>{
+
+    const play = () => {
       this.boxWidth = this.$refs.videoBox.clientWidth
       this.boxHeight = this.$refs.videoBox.clientHeight
+
+      // play music
+      if (this.counter == 1) {
+        this.audio = new Audio('src/musicas/' + this.musicId + '.mp3')
+        this.audio.play()
+      }
+      // fade out music
+      if (this.counter == this.sourceVideos.length - 1) {
+        const interval = setInterval(()=>{
+          const newVolume = this.audio.volume - 0.1;
+          if(newVolume >= 0){
+            this.audio.volume = newVolume;
+          }
+          else{
+            // Stop fade
+            clearInterval(interval);
+            this.audio.pause();
+            this.audio.volume = 1;
+          }
+        }, 3000);
+      }
+
+      // play video
       if (this.counter == this.sourceVideos.length) {
-        this.$router.push({ path: '/projeto/' + this.id })
+        if (this.isShared) {
+          this.$router.push({ path: '/' })
+        } else {
+          this.$router.push({ path: '/projeto/' + this.id + '/1' })
+        }
       } else {
         video.src = this.videoLink(this.sourceVideos[this.counter]);
         this.counter++;
@@ -41,6 +74,7 @@ const VideoView = {
     };
     video.addEventListener("ended", play, false);
     play();
+
   },
   methods: {
     videoLink(video) {

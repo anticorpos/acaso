@@ -81,7 +81,7 @@ body {
   color: white;
 }
 #app p {
-  font-size: 18px;
+  font-size: 22px;
 }
 #app h1 {
   color: #E74444;
@@ -231,4 +231,21 @@ body {
 }
 #app #projeto .view a:hover {
   border-bottom: 1px solid red;
+}
+#app #projeto .share {
+  width: 20%;
+  height: 50%;
+  float: right;
+  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+#app #projeto .share img {
+  width: 100%;
+  max-width: 180px;
+}
+#app #projeto .share p {
+  font-size: 18px;
+  max-width: 150px;
 }

@@ -18,10 +18,10 @@ const GrupoView = {
           Maiores informações em suas redes:
         </p>
         <p>
-          <a href="">https://anticorpos.wordpress.com/</a>
+          <a href="https://anticorpos.wordpress.com/" target=“_blank”>https://anticorpos.wordpress.com/</a>
         </p>
         <p>
-          <a href="">https://www.instagram.com/p/Cghu5ucOXcs/</a>
+          <a href="https://www.instagram.com/p/Cghu5ucOXcs/" target=“_blank”>https://www.instagram.com/p/Cghu5ucOXcs/</a>
         </p>
         <p>
           @anti__corpos
