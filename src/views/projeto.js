@@ -9,11 +9,11 @@ const ProjetoView = {
     }
   },
   mounted() {
-    this.shareCode = window.location.href
+    this.shareCode = window.location.href.replace("projeto", "video")
   },
   methods: {
     copyToClipboard() {
-      console.log(this.shareCode.replace("projeto", "video"))
+      console.log(this.shareCode)
       navigator.clipboard && navigator.clipboard.writeText(this.shareCode)
     },
   },
