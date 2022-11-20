@@ -76,6 +76,9 @@ const JogoView = {
         if (videoFilename == 'bacia') {
           limit = 11
         }
+        if (videoFilename == 'torco') {
+          limit = 16
+        }
         if (videoFilename == 'cabeca') {
           videoFilename += '_invertida_';
         } else {
