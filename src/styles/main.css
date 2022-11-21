@@ -240,6 +240,7 @@ body {
   display: flex;
   flex-direction: column;
   text-align: justify;
+  cursor: pointer;
 }
 #app #projeto .share img {
   width: 100%;

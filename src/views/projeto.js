@@ -32,7 +32,7 @@ const ProjetoView = {
 
       <div class="share" v-if="id" @click="copyToClipboard">
         <img src="src/imgs/logo-acaso.png" />
-        <p>Clique na imagem para compartilhar</p>
+        <p>Clique na imagem para copiar o link e compartilhe</p>
       </div>
 
       <router-link to="/jogo">começar</router-link>
