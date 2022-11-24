@@ -188,7 +188,7 @@ const JogoView = {
                 <img :src="'src/videos/thumbs/'+thumbs" />
               </div>
               <div v-else>
-                <p style="color: red;"><b>Intruções:</b></p>
+                <p style="color: red;"><b>Instruções:</b></p>
                 <p>1) Faça uma combinação escolhendo uma carta de cada fileira;</p>
                 <p>2) Aperte play para incluir o vídeo resultante na timeline;</p>
                 <p>3) Repita o procedimento por 5 vezes, até completar a timeline;</p>
